@@ -1,11 +1,13 @@
 import React, {Component} from 'react';
-import "./Main.css";
+
+
 import SearchHeader from "../SearchHeader/SearchHeader";
 import Search from "../Search/Search";
 import Filters from "../Filters/Filters";
 import CardsCategory from "../CardsCategory/CardsCategory";
 import Counter from "../Counter/Counter";
 import UniqueEquipments from "../UniqueEquipments/UniqueEquipments";
+import "./Main.css";
 
 const filters = {
     city: ['Все города','Москва', 'Одесса', 'Сочи'],
