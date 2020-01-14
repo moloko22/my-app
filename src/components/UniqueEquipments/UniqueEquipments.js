@@ -8,7 +8,8 @@ class UniqueEquipments extends Component {
             <div>
                 <UniqueInfo header={'Уникальное оборудование'}
                             text={'Не нужно покупать дорогостоящее оборудование и брать в штат уникальных специалистов.'}/>
-                <UniqueCards cards={this.props.cards}/>
+                <UniqueCards cards={this.props.cards}
+                            selectCard={this.props.selectCard}/>
             </div>
         );
     }

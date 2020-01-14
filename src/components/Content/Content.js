@@ -24,10 +24,10 @@ const counters = [
     {counter: 85, text: 'Аккредитованных поставщиков'}
     ];
 const cards = [
-    {header: 'Fortus 900MC - промышленный 3D принтер c самой большой рабочей зоной', text: 'Рабочая зона - 914х609х914 мм', img: '#'},
-    {header: 'Titan Themis - просвечивающий электронный микроскоп', text: 'Ускоряющее напряжение - 300кв', img: '#'},
-    {header: 'Oxford System 100 Pro - кластерная установка с камерой осаждения атомных слоев', text: 'text', img: 'link'},
-    {header: 'V780 - вибрационный стенд ', text: 'Проведение ударных и вибрационных испытаний изделий весом до 100км ', img: 'link'}
+    {header: 'Fortus 900MC - промышленный 3D принтер c самой большой рабочей зоной', id: 1, price: 2500,  text: 'Рабочая зона - 914х609х914 мм', img: '#'},
+    {header: 'Titan Themis - просвечивающий электронный микроскоп', id: 2, price: 2500, text: 'Ускоряющее напряжение - 300кв', img: '#'},
+    {header: 'Oxford System 100 Pro - кластерная установка с камерой осаждения атомных слоев', id: 3, price: 2500, text: 'text', img: 'link'},
+    {header: 'V780 - вибрационный стенд ', id: 4, text: 'Проведение ударных и вибрационных испытаний изделий весом до 100км ', price: 2500, img: 'link'}
 ];
 class Content extends Component {
     render() {
@@ -44,6 +44,7 @@ class Content extends Component {
                     <UniqueEquipments header={''}
                                       text={''}
                                       cards={cards}
+                                      selectCard={this.props.selectCard}
                     />
                 </section>
             </main>

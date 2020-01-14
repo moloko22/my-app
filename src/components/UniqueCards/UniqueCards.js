@@ -1,14 +1,16 @@
 import React, {Component} from 'react';
-
+import { Link } from 'react-router-dom';
 class UniqueCards extends Component {
     generateList(array){
         return array.map(elem => {
             return (
-                <div className={'unique_card'} key={elem.header}>
-                    <h3>{elem.header}</h3>
-                    <p>{elem.text}</p>
-                    <img src={elem.img} alt="little_logo"/>
-                </div>
+                <Link to={`/card/${elem.id}`} className={'unique_card'}>
+                    <div  key={elem.header} onClick={() =>this.props.selectCard(elem)}>
+                                <h3>{elem.header}</h3>
+                                <p>{elem.text}</p>
+                                <img src={elem.img} alt="little_logo" />
+                    </div>
+                </Link>
             )
         })
     }
