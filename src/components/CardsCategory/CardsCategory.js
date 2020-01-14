@@ -10,7 +10,7 @@ class CardsCategory extends Component {
                     <h2>{elem.name}</h2>
                     <ul>
                         {elem.titles.map(title=>{
-                            return (<li key={title}>title</li>)
+                            return (<li key={title}>{title}</li>)
                         })
                         }
                     </ul>
