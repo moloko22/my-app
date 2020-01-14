@@ -1,5 +1,7 @@
 import React, { Component }from 'react';
 
+import Provider from "react-redux/lib/components/Provider";
+import store from '../src/store/store'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
@@ -23,19 +25,21 @@ class App extends Component {
     };
     render() {
         return (
-            <section className={'app_wrapper'}>
-                <div className={'app'}>
-                    <Header/>
-                    <BrowserRouter>
-                        <Switch>
-                            <Route path={"/"} exact component={() => <Content selectCard={this.selectCard} />}/>
-                            <Route path={'/category/'}  component={() => <Category category={this.state.category}/>}/>
-                            <Route path={'/card/'} component={() => <Card card={this.state.card}/>}/>
-                        </Switch>
-                    </BrowserRouter>
-                    <Footer/>
-                </div>
-            </section>
+            <Provider store={store}>
+                <section className={'app_wrapper'}>
+                    <div className={'app'}>
+                        <Header/>
+                        <BrowserRouter>
+                            <Switch>
+                                <Route path={"/"} exact component={() => <Content selectCard={this.selectCard} />}/>
+                                <Route path={'/category/'}  component={() => <Category category={this.state.category}/>}/>
+                                <Route path={'/card/'} component={() => <Card card={this.state.card}/>}/>
+                            </Switch>
+                        </BrowserRouter>
+                        <Footer/>
+                    </div>
+                </section>
+            </Provider>
         );
     }
 }

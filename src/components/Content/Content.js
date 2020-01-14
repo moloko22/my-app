@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-
+import connect from "react-redux/lib/connect/connect";
 import SearchHeader from "../SearchHeader/SearchHeader";
 import Search from "../Search/Search";
 import Filters from "../Filters/Filters";
@@ -9,26 +9,10 @@ import Counter from "../Counter/Counter";
 import UniqueEquipments from "../UniqueEquipments/UniqueEquipments";
 import "./Main.css";
 
-const filters = {
-    city: ['Все города','Москва', 'Одесса', 'Сочи'],
-    category: ['Все категории', 'First', 'Second', 'Third'],
-};
-const array = [
-    {id: 1, name: 'Прототипирование', titles:['Бесконтактная обработка', 'Точная механобработка', 'Доступ в Hardware Hackspace']},
-    {id: 2, name: 'Биомедицина', titles:['Доступ к оборудованию SkBioLab', 'Доклинические исследования', 'Клинические исследования']},
-    {id: 3, name: 'Метрология', titles:['Линейно-угловые измерения, формы, шерховатости', 'Химические исследования', 'Квантовая оптика']},
-    {id: 4, name: 'Испытания', titles:['Электрохимичиские испытания', 'Микробиологические испытания', 'Мониторинг "чистых производственных помещений"']}
-];
 const counters = [
     {counter: 1500, text: 'Единиц технологического оборудования'},
     {counter: 85, text: 'Аккредитованных поставщиков'}
     ];
-const cards = [
-    {header: 'Fortus 900MC - промышленный 3D принтер c самой большой рабочей зоной', id: 1, price: 2500,  text: 'Рабочая зона - 914х609х914 мм', img: '#'},
-    {header: 'Titan Themis - просвечивающий электронный микроскоп', id: 2, price: 2500, text: 'Ускоряющее напряжение - 300кв', img: '#'},
-    {header: 'Oxford System 100 Pro - кластерная установка с камерой осаждения атомных слоев', id: 3, price: 2500, text: 'text', img: 'link'},
-    {header: 'V780 - вибрационный стенд ', id: 4, text: 'Проведение ударных и вибрационных испытаний изделий весом до 100км ', price: 2500, img: 'link'}
-];
 class Content extends Component {
     render() {
         return (
@@ -38,12 +22,12 @@ class Content extends Component {
                                   paragraph={'Заказывайте услуги прототипирования, испытаний, метрологии и биомедицины'}
                     />
                     <Search />
-                    <Filters filters={filters}/>
-                    <CardsCategory list={array} selectCard={this.props.selectCard}/>
+                    <Filters filters={this.props.filters}/>
+                    <CardsCategory list={this.props.category} selectCard={this.props.selectCard}/>
                     <Counter counters={counters}/>
                     <UniqueEquipments header={''}
                                       text={''}
-                                      cards={cards}
+                                      cards={this.props.cards}
                                       selectCard={this.props.selectCard}
                     />
                 </section>
@@ -51,5 +35,12 @@ class Content extends Component {
         );
     }
 }
+const mapStateToProps = state => ({
+    filters: state.filters,
+    category: state.category,
+    cards: state.equipment,
 
-export default Content;
+});
+const mapDispatchToProps = dispatch => ({
+});
+export default connect(mapStateToProps, mapDispatchToProps)(Content);
