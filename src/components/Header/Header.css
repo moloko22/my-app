@@ -1,0 +1,30 @@
+header {
+    display: flex;
+    justify-content: space-around;
+}
+.navbar{
+    flex: 3;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.navbar li {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0 25px 0 20px;
+    list-style: none;
+    font-size: 19px;
+}
+.navbar li:hover {
+    cursor: pointer;
+    color: red;
+    text-decoration: underline red;
+}
+.logo {
+    display: flex;
+    flex: 1;
+}
+.logo img{
+    width: 190px;
+}
