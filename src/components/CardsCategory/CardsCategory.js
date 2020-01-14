@@ -1,12 +1,13 @@
 import React, {Component} from 'react';
+import { Link } from 'react-router-dom';
+
 
 class CardsCategory extends Component {
-
     generateList(array){
         return array.map((elem, i) => {
             return (
-                <div key={elem.name}
-                     className={'card'}>
+                <Link to={`/category/${elem.name}`} className={'card'} key={elem.id}>
+                    <div onClick={() => this.props.selectCard('category', elem)}>
                     <h2>{elem.name}</h2>
                     <ul>
                         {elem.titles.map(title=>{
@@ -15,6 +16,8 @@ class CardsCategory extends Component {
                         }
                     </ul>
                 </div>
+                </Link>
+
             )
         })
     }
