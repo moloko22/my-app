@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
+
 import UniqueInfo from "../UniqueInfo/UniqueInfo";
 import UniqueCards from "../UniqueCards/UniqueCards";
+import './UniqueEquipments.css';
 
 class UniqueEquipments extends Component {
     render() {

@@ -1,5 +1,6 @@
 import React from 'react';
 
+import './SearchHeader.css';
 function SearchHeader(props) {
     return (
         <div className={'search_header'}>

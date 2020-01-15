@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 
+import "./Main.css";
 import connect from "react-redux/lib/connect/connect";
 import SearchHeader from "../SearchHeader/SearchHeader";
 import Search from "../Search/Search";
@@ -7,8 +8,13 @@ import Filters from "../Filters/Filters";
 import CardsCategory from "../CardsCategory/CardsCategory";
 import Counter from "../Counter/Counter";
 import UniqueEquipments from "../UniqueEquipments/UniqueEquipments";
-import "./Main.css";
+import Process from "../Process/Process";
 
+
+const process = {
+    header: 'Простой и удобный процесс',
+    text: 'Не нужно покупать дорогостоящее оборудования и брать в штат уникальных специалистов'
+};
 const counters = [
     {counter: 1500, spanText: 'оборудования', text: 'технологического и наукоёмкого'},
     {counter: 85, spanText: 'городов', text: 'по всей России'}
@@ -30,6 +36,7 @@ class Content extends Component {
                     />
                     <Counter counters={counters}/>
                     <CardsCategory list={this.props.category} selectCard={this.props.selectCard}/>
+                    <Process process={process} />
                 </section>
             </main>
         );

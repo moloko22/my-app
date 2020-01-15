@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
+
 import { Link } from 'react-router-dom';
+import './UniqueCards.css';
+
 class UniqueCards extends Component {
     generateList(array){
         return array.map(elem => {

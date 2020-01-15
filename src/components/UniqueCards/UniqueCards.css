@@ -1,0 +1,14 @@
+.unique_cards{
+    width: 870px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 80px;
+}
+.unique_card {
+    margin: 5px;
+    width: 400px;
+    min-height: 180px;
+    padding: 20px 0 0 20px;
+    color: #000;
+    text-decoration: none;
+}

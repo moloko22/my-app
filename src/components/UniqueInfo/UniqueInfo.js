@@ -1,5 +1,6 @@
 import React from 'react';
 
+import './UniqueInfo.css';
 function UniqueInfo(props){
     return(
         <div className={'unique_info'}>

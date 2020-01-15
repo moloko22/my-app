@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
+
 import { Link } from 'react-router-dom';
-
-
+import './CardsCategory.css';
 class CardsCategory extends Component {
     generateList(array){
         return array.map((elem, i) => {

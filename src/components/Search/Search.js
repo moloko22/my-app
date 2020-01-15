@@ -1,5 +1,7 @@
 import React from 'react';
-import {Input} from "antd";
+
+import { Input } from "antd";
+import './Search.css';
 
 function Search(){
     return(

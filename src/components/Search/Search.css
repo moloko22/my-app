@@ -1,0 +1,32 @@
+.search {
+    width: 70%;
+    min-height: 70px;
+    display: flex;
+}
+.search input {
+    padding-left: 15px;
+    font-size: 19px;
+    min-height: 64px;
+    width: 800px;
+    background: #FFFFFF;
+    border: 2px solid #828282;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+.search button {
+    position: relative;
+    top: -2px;
+    right: 135px;
+    border: 1px solid green;
+    width: 132px;
+    min-height: 52px;
+    background: #0EB757;
+    border-radius: 8px;
+    height: 21px;
+    font-family: SF Pro Display, serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    color: #FFFFFF;
+}

@@ -1,0 +1,9 @@
+.card {
+    font-size: 21px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 400px;
+    color: #000;
+    text-decoration: none;
+}

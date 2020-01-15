@@ -1,0 +1,43 @@
+.process {
+    width: 1350px;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #F5F8FE;;
+}
+
+.process_header {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.process_header:before{
+    content: '';
+    width: 50px;
+    min-height: 4px;
+    background: #0EB757;
+    border-radius: 4px;
+}
+
+.process h3 {
+    font-family: Montserrat, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 39px;
+    color: #333333;
+}
+
+.process p {
+    width: 450px;
+    font-family: SF Pro Display, serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    color: #828282;
+}
