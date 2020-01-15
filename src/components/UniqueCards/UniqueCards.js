@@ -7,13 +7,12 @@ class UniqueCards extends Component {
     generateList(array){
         return array.map(elem => {
             return (
-                <Link to={`/card/${elem.id}`} className={'unique_card'} key={elem.id}>
-                    <div onClick={() =>this.props.selectCard('card', elem)}>
+                <Link to={`/card/${elem.id}`} className={'unique_card_link'} key={elem.id}>
+                    <div  className={'unique_card'} onClick={() =>this.props.selectCard('card', elem)}>
                         <img src={elem.img} alt="little_logo" />
                         <h3>{elem.city}</h3>
                         <p>{elem.text}</p>
-                        <span>от {elem.price}</span>
-
+                        <span>от {elem.price} руб.</span>
                     </div>
                 </Link>
             )

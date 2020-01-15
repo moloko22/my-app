@@ -4,11 +4,27 @@
     flex-wrap: wrap;
     margin-bottom: 80px;
 }
-.unique_card {
+.unique_card_link {
     margin: 5px;
     width: 400px;
     min-height: 180px;
     padding: 20px 0 0 20px;
     color: #000;
     text-decoration: none;
+
+}
+.unique_card {
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(178, 184, 191, 0.25);
+    border-radius: 4px;
+    width: 350px;
+}
+.unique_card p {
+    width: 320px;
+    max-height: 150px;
+    overflow-x:hidden
+}
+.unique_card img {
+    width: 240px;
+    min-height: 200px;
 }

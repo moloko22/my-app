@@ -14,7 +14,7 @@ class Header extends Component {
                     <Menu>
                         <Menu.Item key="logout" className={'menu_item'}>
                             <Icon type="user"/>
-                            <a href={'/'}>Войти</a>
+                            <a href={'/account'}>Войти</a>
                         </Menu.Item>
                     </Menu>
                 </div>

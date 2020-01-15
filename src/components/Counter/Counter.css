@@ -28,10 +28,11 @@
     color: #0EB757;
 }
 .counter div span {
+    text-transform: uppercase;
     font-family: Montserrat, serif;
     font-style: normal;
     font-weight: 800;
-    font-size: 32px;
+    font-size: 28px;
     line-height: 39px;
     text-align: center;
     color: #828282;

@@ -7,7 +7,7 @@ class Counter extends Component {
             return (
                 <div key={elem.counter}>
                     <h3>{elem.counter + '+'}</h3>
-                    <span>Городов</span>
+                    <span>{elem.spanText}</span>
                     <p>{elem.text}</p>
                 </div>
             )
