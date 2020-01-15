@@ -41,7 +41,7 @@ class Content extends Component {
                     <Filters filters={this.props.filters}
                              onChangeFilter={this.onChangeFilter}
                              city={this.props.cityFilter}
-                             categoryFilter={this.props.categoryFilter}
+                             category={this.props.categoryFilter}
                     />
                     <UniqueEquipments header={''}
                                       text={''}
