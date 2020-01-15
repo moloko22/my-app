@@ -23,13 +23,13 @@ class Content extends Component {
                     />
                     <Search />
                     <Filters filters={this.props.filters}/>
-                    <CardsCategory list={this.props.category} selectCard={this.props.selectCard}/>
-                    <Counter counters={counters}/>
                     <UniqueEquipments header={''}
                                       text={''}
                                       cards={this.props.cards}
                                       selectCard={this.props.selectCard}
                     />
+                    <Counter counters={counters}/>
+                    <CardsCategory list={this.props.category} selectCard={this.props.selectCard}/>
                 </section>
             </main>
         );
