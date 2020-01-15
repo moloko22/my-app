@@ -9,8 +9,12 @@ import CardsCategory from "../CardsCategory/CardsCategory";
 import Counter from "../Counter/Counter";
 import UniqueEquipments from "../UniqueEquipments/UniqueEquipments";
 import Process from "../Process/Process";
+import HowStart from "../HowStart/HowStart";
 
-
+const start = {
+    header: 'C чего начать?',
+    text: 'Не нужно покупать дорогостоящее оборудования и брать в штат уникальных специалистов',
+}
 const process = {
     header: 'Простой и удобный процесс',
     text: 'Не нужно покупать дорогостоящее оборудования и брать в штат уникальных специалистов'
@@ -37,6 +41,7 @@ class Content extends Component {
                     <Counter counters={counters}/>
                     <CardsCategory list={this.props.category} selectCard={this.props.selectCard}/>
                     <Process process={process} />
+                    <HowStart start={start}/>
                 </section>
             </main>
         );
