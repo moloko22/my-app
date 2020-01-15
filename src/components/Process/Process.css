@@ -1,6 +1,6 @@
 .process {
     width: 1350px;
-    min-height: 600px;
+    min-height: 700px;
     margin-top: 50px;
     display: flex;
     flex-direction: column;
@@ -43,6 +43,7 @@
     color: #828282;
 }
 .process_images {
+    margin-top: 50px;
     display: flex;
     justify-content: space-around;
     width: 100%;
