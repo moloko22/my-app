@@ -24,6 +24,12 @@ const counters = [
     {counter: 85, spanText: 'городов', text: 'по всей России'}
     ];
 class Content extends Component {
+    onSubmit = (text) =>{
+        this.props.onSubmit(text);
+    };
+    onChangeFilter = (text, filter) =>{
+        this.props.selectFilter(text, filter);
+    };
     render() {
         return (
             <main>
@@ -31,8 +37,12 @@ class Content extends Component {
                     <SearchHeader header={'Технологические сервисы'}
                                   paragraph={'Заказывайте услуги прототипирования, испытаний, метрологии и биомедицины'}
                     />
-                    <Search />
-                    <Filters filters={this.props.filters}/>
+                    <Search onSubmit={this.onSubmit}/>
+                    <Filters filters={this.props.filters}
+                             onChangeFilter={this.onChangeFilter}
+                             city={this.props.cityFilter}
+                             categoryFilter={this.props.categoryFilter}
+                    />
                     <UniqueEquipments header={''}
                                       text={''}
                                       cards={this.props.cards}
@@ -48,11 +58,14 @@ class Content extends Component {
     }
 }
 const mapStateToProps = state => ({
-    filters: state.filters,
-    category: state.category,
-    cards: state.equipment,
-
+    filters: state.filtersState,
+    category: state.categoryState,
+    cards: state.equipmentState,
+    cityFilter: state.filters.city,
+    categoryFilter: state.filters.category,
 });
 const mapDispatchToProps = dispatch => ({
+    selectFilter: (text, filter) => dispatch({type: 'ADD_FILTER', payload: [text, filter]}),
+    onSubmit: (text) => dispatch({type: 'SEARCH', payload: text}),
 });
 export default connect(mapStateToProps, mapDispatchToProps)(Content);
