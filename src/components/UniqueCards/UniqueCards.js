@@ -6,9 +6,11 @@ class UniqueCards extends Component {
             return (
                 <Link to={`/card/${elem.id}`} className={'unique_card'} key={elem.id}>
                     <div onClick={() =>this.props.selectCard('card', elem)}>
-                                <h3>{elem.header}</h3>
-                                <p>{elem.text}</p>
-                                <img src={elem.img} alt="little_logo" />
+                        <img src={elem.img} alt="little_logo" />
+                        <h3>{elem.city}</h3>
+                        <p>{elem.text}</p>
+                        <span>от {elem.price}</span>
+
                     </div>
                 </Link>
             )

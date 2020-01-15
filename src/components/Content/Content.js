@@ -10,8 +10,8 @@ import UniqueEquipments from "../UniqueEquipments/UniqueEquipments";
 import "./Main.css";
 
 const counters = [
-    {counter: 1500, text: 'Единиц технологического оборудования'},
-    {counter: 85, text: 'Аккредитованных поставщиков'}
+    {counter: 1500, spanText: 'оборудования', text: 'технологического и наукоёмкого'},
+    {counter: 85, spanText: 'городов', text: 'по всей России'}
     ];
 class Content extends Component {
     render() {
