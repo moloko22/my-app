@@ -6,10 +6,10 @@ class CardsCategory extends Component {
     generateList(array){
         return array.map((elem, i) => {
             return (
-                <Link to={`/category/${elem.name}`}
+                <Link to={`/search`}
                       className={'card'} key={elem.id}>
                     <div className={'category'}
-                         onClick={() => this.props.selectCard('category', elem)}>
+                         onClick={() => this.props.filterCategory(elem.category)}>
                     <h2>{elem.name}</h2>
                     <ul>
                         {elem.titles.map(title=>{

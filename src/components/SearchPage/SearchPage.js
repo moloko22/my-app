@@ -22,8 +22,6 @@ class SearchPage extends Component {
                 />
                 <Filters filters={this.props.filters}
                          onChangeFilter={this.onChangeFilter}
-                         city={this.props.cityFilter}
-                         category={this.props.categoryFilter}
                 />
                 <UniqueCards cards={this.props.cards}
                              selectCard={this.props.selectCard}/>
@@ -37,8 +35,6 @@ const mapStateToProps = state => ({
     filters: state.filtersState,
     category: state.categoryState,
     cards: state.equipmentState,
-    cityFilter: state.filters.city,
-    categoryFilter: state.filters.category,
 });
 const mapDispatchToProps = dispatch => ({
     selectFilter: (text, filter) => dispatch({type: 'ADD_FILTER', payload: [text, filter]}),

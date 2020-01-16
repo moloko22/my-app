@@ -6,7 +6,6 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import Content from "./components/Content/Content";
-import Category from "./components/Category/Category";
 import SearchPage from "./components/SearchPage/SearchPage";
 import Card from "./components/Card/Card";
 import './App.css';
@@ -16,12 +15,11 @@ class App extends Component {
         super(props);
         this.state = {
             card: {},
-            category: {},
         }
     }
     selectCard = (name, elem) =>{
         this.setState({
-            [name]: elem,
+            card: elem,
         })
     };
     render() {
@@ -33,7 +31,6 @@ class App extends Component {
                         <BrowserRouter>
                             <Switch>
                                 <Route path={"/"} exact component={() => <Content selectCard={this.selectCard} />}/>
-                                <Route path={'/category/'}  component={() => <Category category={this.state.category}/>}/>
                                 <Route path={'/card/'} component={() => <Card card={this.state.card}/>}/>
                                 <Route path={"/search"} exact component={() => <SearchPage selectCard={this.selectCard}/>}/>
                             </Switch>

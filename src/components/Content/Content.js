@@ -24,11 +24,14 @@ const counters = [
     {counter: 85, spanText: 'городов', text: 'по всей России'}
     ];
 class Content extends Component {
+    filterCategory = (category) => {
+        this.props.filterByCategory(category)
+    };
     onChangeInputValue = (text) =>{
         this.props.onChangeInput(text);
     };
-    onSubmit = (text) =>{
-        this.props.onSubmit(text);
+    sendRequest = () =>{
+        this.props.onSubmit();
     };
     onChangeFilter = (text, filter) =>{
         this.props.selectFilter(text, filter);
@@ -43,11 +46,10 @@ class Content extends Component {
                     <Search onSubmit={this.onSubmit}
                             inputValue={this.props.inputValue}
                             onChangeInputValue={this.onChangeInputValue}
+                            sendRequest={this.sendRequest}
                     />
                     <Filters filters={this.props.filters}
                              onChangeFilter={this.onChangeFilter}
-                             city={this.props.cityFilter}
-                             category={this.props.categoryFilter}
                     />
                     <UniqueEquipments header={''}
                                       text={''}
@@ -55,7 +57,9 @@ class Content extends Component {
                                       selectCard={this.props.selectCard}
                     />
                     <Counter counters={counters}/>
-                    <CardsCategory list={this.props.category} selectCard={this.props.selectCard}/>
+                    <CardsCategory list={this.props.category}
+                                   filterCategory={this.filterCategory}
+                                   selectCard={this.props.selectCard}/>
                     <Process process={process} />
                     <HowStart start={start}/>
                 </section>
@@ -68,12 +72,11 @@ const mapStateToProps = state => ({
     filters: state.filtersState,
     category: state.categoryState,
     cards: state.equipmentState,
-    cityFilter: state.filters.city,
-    categoryFilter: state.filters.category,
 });
 const mapDispatchToProps = dispatch => ({
-    selectFilter: (text, filter) => dispatch({type: 'ADD_FILTER', payload: [text, filter]}),
+    selectFilter: (value, filter) => dispatch({type: 'ADD_FILTER', payload: [value, filter]}),
     onChangeInput: (text ) => dispatch({type: 'CHANGE_INPUT_VALUE', payload: text}),
-    onSubmit: (text) => dispatch({type: 'SEARCH', payload: text}),
+    onSubmit: () => dispatch({type: 'SEARCH', payload: {}}),
+    filterByCategory: (category) => dispatch({type: 'FILTER_BY_CATEGORY', payload: category}),
 });
 export default connect(mapStateToProps, mapDispatchToProps)(Content);
