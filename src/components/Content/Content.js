@@ -24,6 +24,9 @@ const counters = [
     {counter: 85, spanText: 'городов', text: 'по всей России'}
     ];
 class Content extends Component {
+    onChangeInputValue = (text) =>{
+        this.props.onChangeInput(text);
+    };
     onSubmit = (text) =>{
         this.props.onSubmit(text);
     };
@@ -37,7 +40,10 @@ class Content extends Component {
                     <SearchHeader header={'Технологические сервисы'}
                                   paragraph={'Заказывайте услуги прототипирования, испытаний, метрологии и биомедицины'}
                     />
-                    <Search onSubmit={this.onSubmit}/>
+                    <Search onSubmit={this.onSubmit}
+                            inputValue={this.props.inputValue}
+                            onChangeInputValue={this.onChangeInputValue}
+                    />
                     <Filters filters={this.props.filters}
                              onChangeFilter={this.onChangeFilter}
                              city={this.props.cityFilter}
@@ -58,6 +64,7 @@ class Content extends Component {
     }
 }
 const mapStateToProps = state => ({
+    inputValue: state.inputValue,
     filters: state.filtersState,
     category: state.categoryState,
     cards: state.equipmentState,
@@ -66,6 +73,7 @@ const mapStateToProps = state => ({
 });
 const mapDispatchToProps = dispatch => ({
     selectFilter: (text, filter) => dispatch({type: 'ADD_FILTER', payload: [text, filter]}),
+    onChangeInput: (text ) => dispatch({type: 'CHANGE_INPUT_VALUE', payload: text}),
     onSubmit: (text) => dispatch({type: 'SEARCH', payload: text}),
 });
 export default connect(mapStateToProps, mapDispatchToProps)(Content);

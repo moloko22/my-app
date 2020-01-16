@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 
+import './Filters.css';
 class Filters extends Component {
     onChange(e, type){
         this.props.onChangeFilter(e.target.value, type);
@@ -12,7 +13,6 @@ class Filters extends Component {
         }
     }
     render() {
-        console.log(this.props);
         return (
             <div className={'filters'}>
                 <div className={"filter_by_citys"}>

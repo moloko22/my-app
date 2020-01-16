@@ -19,6 +19,7 @@ const initialState = {
             city: '',
             category: '',
         },
+        inputValue: '',
 };
 
 
@@ -55,18 +56,21 @@ export default function reducer(state = initialState, action) {
             break;
         }
         case 'ADD_FILTER': {
-            console.log(action.payload);
+            const newObject = Object.assign({}, state);
             if(action.payload[1] === 'category' && action.payload[0] !== 'Все города'){
-                const newArray = Object.assign({}, state);
-                newArray.filters.category = action.payload[0];
-                return newArray;
+                newObject.filters.category = action.payload[0];
+                return newObject;
             }
             if(action.payload[1] === 'city' && action.payload[0] !== 'Все категории'){
-                const newArray = Object.assign({}, state);
-                newArray.filters.city = action.payload[0];
-                return newArray;
+                newObject.filters.city = action.payload[0];
+                return newObject;
             }
             return state;
+        }
+        case 'CHANGE_INPUT_VALUE': {
+            const newObject = Object.assign({}, state);
+            newObject.inputValue = action.payload;
+            return newObject;
         }
         default : return state;
     }
