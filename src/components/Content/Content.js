@@ -10,6 +10,7 @@ import Counter from "../Counter/Counter";
 import UniqueEquipments from "../UniqueEquipments/UniqueEquipments";
 import Process from "../Process/Process";
 import HowStart from "../HowStart/HowStart";
+import filter from '../../store/Actions/filter';
 
 const start = {
     header: 'C чего начать?',
@@ -30,8 +31,11 @@ class Content extends Component {
     onChangeInputValue = (text) =>{
         this.props.onChangeInput(text);
     };
-    sendRequest = () =>{
-        this.props.onSubmit();
+    search = () =>{
+        const text = this.props.inputValue;
+        const city = this.props.cityFilter;
+        const category = this.props.categoryFilter;
+        this.props.searchRequest( {text: text, city: city, category: category} );
     };
     onChangeFilter = (text, filter) =>{
         this.props.selectFilter(text, filter);
@@ -43,10 +47,9 @@ class Content extends Component {
                     <SearchHeader header={'Технологические сервисы'}
                                   paragraph={'Заказывайте услуги прототипирования, испытаний, метрологии и биомедицины'}
                     />
-                    <Search onSubmit={this.onSubmit}
-                            inputValue={this.props.inputValue}
+                    <Search inputValue={this.props.inputValue}
                             onChangeInputValue={this.onChangeInputValue}
-                            sendRequest={this.sendRequest}
+                            sendRequest={this.search}
                     />
                     <Filters filters={this.props.filters}
                              onChangeFilter={this.onChangeFilter}
@@ -72,11 +75,13 @@ const mapStateToProps = state => ({
     filters: state.filtersState,
     category: state.categoryState,
     cards: state.equipmentState,
+    cityFilter: state.filterSearch.city,
+    categoryFilter: state.filterSearch.category,
 });
 const mapDispatchToProps = dispatch => ({
     selectFilter: (value, filter) => dispatch({type: 'ADD_FILTER', payload: [value, filter]}),
     onChangeInput: (text ) => dispatch({type: 'CHANGE_INPUT_VALUE', payload: text}),
-    onSubmit: () => dispatch({type: 'SEARCH', payload: {}}),
+    searchRequest: (obj) => dispatch(filter(obj)),
     filterByCategory: (category) => dispatch({type: 'FILTER_BY_CATEGORY', payload: category}),
 });
 export default connect(mapStateToProps, mapDispatchToProps)(Content);

@@ -36,6 +36,7 @@
     ]
   },
   "devDependencies": {
-    "react-redux": "^7.1.3"
+    "react-redux": "^7.1.3",
+    "redaction": "^5.1.1"
   }
 }

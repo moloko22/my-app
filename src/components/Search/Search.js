@@ -5,10 +5,10 @@ import { Input } from "antd";
 import './Search.css';
 
 class Search extends Component {
-    handleSubmit(event){
+    handleSubmit = (event) =>{
         event.preventDefault();
         this.props.sendRequest();
-    }
+    };
     render() {
         return (
             <div className={'search'}>
