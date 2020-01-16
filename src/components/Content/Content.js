@@ -10,7 +10,6 @@ import Counter from "../Counter/Counter";
 import UniqueEquipments from "../UniqueEquipments/UniqueEquipments";
 import Process from "../Process/Process";
 import HowStart from "../HowStart/HowStart";
-import filter from '../../store/Actions/filter';
 
 const start = {
     header: 'C чего начать?',
@@ -35,7 +34,8 @@ class Content extends Component {
         const text = this.props.inputValue;
         const city = this.props.cityFilter;
         const category = this.props.categoryFilter;
-        this.props.searchRequest( {text: text, city: city, category: category} );
+        const cards = this.props.cards;
+        this.props.searchRequest( text, city, category, cards );
     };
     onChangeFilter = (text, filter) =>{
         this.props.selectFilter(text, filter);
@@ -53,6 +53,7 @@ class Content extends Component {
                     />
                     <Filters filters={this.props.filters}
                              onChangeFilter={this.onChangeFilter}
+
                     />
                     <UniqueEquipments header={''}
                                       text={''}
@@ -79,9 +80,9 @@ const mapStateToProps = state => ({
     categoryFilter: state.filterSearch.category,
 });
 const mapDispatchToProps = dispatch => ({
-    selectFilter: (value, filter) => dispatch({type: 'ADD_FILTER', payload: [value, filter]}),
-    onChangeInput: (text ) => dispatch({type: 'CHANGE_INPUT_VALUE', payload: text}),
-    searchRequest: (obj) => dispatch(filter(obj)),
-    filterByCategory: (category) => dispatch({type: 'FILTER_BY_CATEGORY', payload: category}),
+    selectFilter: (value, category) => dispatch({type: 'ADD_FILTER', payload: {text: value, category: category}}),
+    onChangeInput: (text) => dispatch({type: 'CHANGE_INPUT_VALUE', payload: text}),
+    searchRequest: (text, city, category, cards) => dispatch({type: 'FILTER', payload: { text: text, city:city, category:category, cards:cards}}),
+    filterByCategory: (category) => dispatch({type: 'FILTER', payload: {text: '', city: '', category: category}}),
 });
 export default connect(mapStateToProps, mapDispatchToProps)(Content);
