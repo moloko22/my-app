@@ -25,8 +25,6 @@ const counters = [
     ];
 class Content extends Component {
     filterCategory = (value, category) => {
-        console.log(value);
-        console.log(category);
         this.props.filterByCategory(value, category)
     };
     onChangeInputValue = (text) =>{

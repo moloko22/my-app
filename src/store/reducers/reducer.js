@@ -29,21 +29,18 @@ export default function reducer(state = initialState, action) {
     switch (action.type) {
         case 'FILTER_BY_CATEGORY' : {
             const newObject = Object.assign({}, initialState);
-            console.log(action.payload);
             newObject.equipmentState = newObject.equipmentState.filter(elem => elem.category === action.payload.text ? elem : null);
             const index = newObject.filtersState[action.payload.category].indexOf(action.payload.text);
             const element = newObject.filtersState[action.payload.category].splice(index, 1);
             newObject.filterSearch[action.payload.category] = element[0];
             newObject.filtersState[action.payload.category].unshift(element[0]);
             newObject.filterSearch.category = action.payload.text;
-            console.log(newObject);
             return newObject;
         }
         case 'FILTER' : {
             // поиск по категории и городу
             if (action.payload.city !== 'Все города' && action.payload.category !== 'Все категории' && !action.payload.text && action.payload.category !== '' && action.payload.city !== '') {
                 const newObject = Object.assign({}, initialState);
-                console.log(action.payload);
                 console.log('поиск по категории и городу');
                 newObject.equipmentState = newObject.equipmentState.filter(elem => elem.city === action.payload.city && elem.category === action.payload.category);
                 return newObject;
@@ -92,7 +89,6 @@ export default function reducer(state = initialState, action) {
             //по городу
             if (action.payload.city !== 'Все города' && (action.payload.category === 'Все города' || action.payload.category === '') && !action.payload.text && action.payload.city !== '') {
                 const newObject = Object.assign({}, initialState);
-                console.log(action.payload);
                 console.log('поиск по городу');
                 newObject.equipmentState = newObject.equipmentState.filter(elem => elem.city === action.payload.city);
                 newObject.filterSearch.city = action.payload.city;
@@ -103,7 +99,6 @@ export default function reducer(state = initialState, action) {
             if ((action.payload.city === 'Все города' || action.payload.city === '') && action.payload.category !== 'Все категории' && !action.payload.text && action.payload.category !== '') {
                 const newObject = Object.assign({}, initialState);
                 console.log('поиск по категории');
-                console.log(action.payload);
                 newObject.equipmentState = newObject.equipmentState.filter(elem => elem.category === action.payload.category ? elem : null);
                 newObject.filterSearch.category = action.payload.category;
                 return newObject;
