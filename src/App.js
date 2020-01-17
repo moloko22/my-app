@@ -8,9 +8,9 @@ import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import Content from "./components/Content/Content";
 import SearchPage from "./components/SearchPage/SearchPage";
-import Card from "./components/Card/Card";
 import './App.css';
 import PersonalPage from "./components/PersonalPage/PersonalPage";
+import Card from "./components/Card/Card";
 
 class App extends Component {
     constructor(props) {
@@ -19,13 +19,17 @@ class App extends Component {
             card: {},
         }
     }
-    changeHistory = (value) =>{
-        history.push(value);
+    orderRequest = (obj) =>{
+        console.log(obj);
+        store.dispatch({type: 'ORDER_REQUEST', payload: obj});
     };
     selectCard = (name, elem) =>{
         this.setState({
             card: elem,
         })
+    };
+    changeHistory = (value) =>{
+        history.push(value);
     };
     render() {
         return (
@@ -36,9 +40,10 @@ class App extends Component {
                             <Header changeHistory={this.changeHistory}/>
                             <Switch>
                                 <Route path={"/"} exact component={() => <Content selectCard={this.selectCard}
-                                                                                    changeHistory={this.changeHistory}
+                                                                                  changeHistory={this.changeHistory}
                                 />}/>
                                 <Route path={'/card/'} component={() => <Card card={this.state.card}
+                                                                              orderRequest={this.orderRequest}
                                                                               changeHistory={this.changeHistory}
                                 />}/>
                                 <Route path={"/search"} exact component={() => <SearchPage selectCard={this.selectCard}

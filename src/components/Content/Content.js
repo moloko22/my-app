@@ -24,6 +24,7 @@ const counters = [
     {counter: 85, spanText: 'городов', text: 'по всей России'}
     ];
 class Content extends Component {
+
     filterCategory = (value, category) => {
         this.props.filterByCategory(value, category)
     };
@@ -41,6 +42,7 @@ class Content extends Component {
     onChangeFilter = (text, filter) =>{
         this.props.selectFilter(text, filter);
     };
+
     render() {
         return (
             <main>

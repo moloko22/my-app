@@ -30,6 +30,13 @@ export default function reducer(state = initialState, action) {
     console.log('ДАННЫЕ НА ВХОДЕ');
     console.log(action.payload);
     switch (action.type) {
+        case 'ORDER_REQUEST': {
+            console.log(action.payload);
+            const newObject = Object.assign({}, initialState);
+            action.payload.status = 'Заявка отправлена';
+            newObject.orders.push(action.payload);
+            return newObject;
+        }
         case 'FILTER_BY_CATEGORY' : {
             const newObject = Object.assign({}, initialState);
             newObject.equipmentState = newObject.equipmentState.filter(elem => elem.category === action.payload.text ? elem : null);
@@ -59,7 +66,7 @@ export default function reducer(state = initialState, action) {
                 return newObject;
             }
             // поиск по категории и инпуту
-            if ((action.payload.city === 'Все города' || action.payload.city === '') && action.payload.category !== 'Все категории' && action.payload.text ) {
+            if ((action.payload.city === 'Все города' || action.payload.city === '') && (action.payload.category !== 'Все категории' && action.payload.category !== '') && action.payload.text ) {
                 const newObject = Object.assign({}, initialState);
                 console.log('поиск по категории и инпуту');
                 let newArrayCategory = [];
@@ -71,7 +78,7 @@ export default function reducer(state = initialState, action) {
             }
 
             // поиск по городу и инпуту
-            if (action.payload.city !== 'Все города' && action.payload.text && (action.payload.category === 'Все категории' || action.payload.category === '')) {
+            if ((action.payload.city !== 'Все города' && action.payload.city !== '') && action.payload.text && (action.payload.category === 'Все категории' || action.payload.category === '')) {
                 const newObject = Object.assign({}, initialState);
                 console.log('поиск по инпуту и городу');
                 let newArrayCity = [];

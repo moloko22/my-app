@@ -4,15 +4,26 @@ import { DatePicker, InputNumber } from 'antd';
 import moment from 'moment';
 import 'antd/dist/antd.css';
 import './Card.css';
-const dateFormat = 'YYYY/MM/DD';
+const dateFormat = 'YYYY.MM.DD';
 
 class Card extends Component {
-
-    onClickHandle = () =>{
-        console.log('Заказано!')
+    onClickHandle = (e) =>{
+        e.preventDefault();
+        this.props.orderRequest(this.props.card);
     };
-    onChange(value) {
-        console.log('changed', value);
+    onChange(name, value) {
+        const orderDate = new Date();
+        if(!name || !value) return;
+        if(name === 'dateFrom' || name === 'dateTo'){
+            this.props.card[name] = value._d.toString().split(' ', 4);
+            console.log(this.props.card);
+            this.props.card.orderDate = [orderDate.getDay(),orderDate.getMonth(), orderDate.getFullYear(), orderDate.getDate()];
+            console.log(this.props.card);
+            this.props.card.quantity = 1;
+        }
+        if(name === 'quantity'){
+            this.props.card.quantity = value;
+        }
     }
     render() {
         return (
@@ -28,14 +39,24 @@ class Card extends Component {
                     </div>
                     <div className={'one_card_form'}>
                         <p><span>{this.props.card.price} руб.</span> за сутки</p>
-                        <form action="">
+                        <form action={''}>
                             <label htmlFor="date_from">Начало аренды</label>
-                            <DatePicker defaultValue={moment('2020/01/01', dateFormat)} format={dateFormat} />
+                            <DatePicker name={'dataFrom'}
+                                        onChange={(e) => this.onChange('dateFrom', e)}
+                                        defaultValue={moment('2020.01.01', dateFormat)}
+                                        format={dateFormat} />
                             <label htmlFor="date_to">Конец аренды</label>
-                            <DatePicker defaultValue={moment('2020/01/01', dateFormat)} format={dateFormat} />
+                            <DatePicker onChange={(e) => this.onChange('dateTo', e)}
+                                        name={'dataFrom'}
+                                        defaultValue={moment('2020.01.01', dateFormat)}
+                                        format={dateFormat} />
                             <label htmlFor="quantity">Количество</label>
-                            <InputNumber min={1} max={100} defaultValue={3} onChange={this.onChange} />
-                            <button onClick={this.onClickHandle}>Отправить заявку</button>
+                            <InputNumber min={1}
+                                         name={'quantity'}
+                                         max={100}
+                                         defaultValue={1}
+                                         onChange={(e) =>this.onChange('quantity', e)} />
+                            <button onClick={(e) => this.onClickHandle(e)}>Отправить заявку</button>
                         </form>
                     </div>
                 </div>

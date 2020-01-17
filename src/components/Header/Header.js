@@ -20,7 +20,7 @@ class Header extends Component {
                                 <path d="M22.5 26.5C22.5 22.3579 19.1421 19 15 19C10.8579 19 7.5 22.3579 7.5 26.5" stroke="#333333" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                                 <circle cx="15" cy="15" r="14" stroke="#333333" strokeWidth="2"/>
                             </svg>
-                            <a onClick={() => this.props.changeHistory('/account')}>Марина</a>
+                            <a onClick={() => this.props.changeHistory('/account')}>Выйти</a>
                         </li>
                     </ul>
                 </div>
