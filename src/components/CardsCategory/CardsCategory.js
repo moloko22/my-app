@@ -9,7 +9,7 @@ class CardsCategory extends Component {
                 <Link to={`/search`}
                       className={'card'} key={elem.id}>
                     <div className={'category'}
-                         onClick={() => this.props.filterCategory(elem.category)}>
+                         onClick={(e) => this.props.filterCategory(elem.category, 'category')}>
                     <h2>{elem.name}</h2>
                     <ul>
                         {elem.titles.map(title=>{

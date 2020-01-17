@@ -24,8 +24,10 @@ const counters = [
     {counter: 85, spanText: 'городов', text: 'по всей России'}
     ];
 class Content extends Component {
-    filterCategory = (category) => {
-        this.props.filterByCategory(category)
+    filterCategory = (value, category) => {
+        console.log(value);
+        console.log(category);
+        this.props.filterByCategory(value, category)
     };
     onChangeInputValue = (text) =>{
         this.props.onChangeInput(text);
@@ -53,7 +55,6 @@ class Content extends Component {
                     />
                     <Filters filters={this.props.filters}
                              onChangeFilter={this.onChangeFilter}
-
                     />
                     <UniqueEquipments header={''}
                                       text={''}
@@ -65,7 +66,9 @@ class Content extends Component {
                                    filterCategory={this.filterCategory}
                                    selectCard={this.props.selectCard}/>
                     <Process process={process} />
-                    <HowStart start={start}/>
+                    <HowStart start={start}
+                              sendRequest={this.search}
+                    />
                 </section>
             </main>
         );
@@ -83,6 +86,6 @@ const mapDispatchToProps = dispatch => ({
     selectFilter: (value, category) => dispatch({type: 'ADD_FILTER', payload: {text: value, category: category}}),
     onChangeInput: (text) => dispatch({type: 'CHANGE_INPUT_VALUE', payload: text}),
     searchRequest: (text, city, category, cards) => dispatch({type: 'FILTER', payload: { text: text, city:city, category:category, cards:cards}}),
-    filterByCategory: (category) => dispatch({type: 'FILTER', payload: {text: '', city: '', category: category}}),
+    filterByCategory: (value, category) => dispatch({type: 'FILTER_BY_CATEGORY', payload: {text: value, category: category}}),
 });
 export default connect(mapStateToProps, mapDispatchToProps)(Content);

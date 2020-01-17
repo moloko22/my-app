@@ -24,19 +24,33 @@ const initialState = {
 
 
 export default function reducer(state = initialState, action) {
-    console.log('ДАННЫЕ НА ВХОДЕ' + action.payload);
+    console.log('ДАННЫЕ НА ВХОДЕ');
+    console.log(action.payload);
     switch (action.type) {
-        case 'FILTER' : {
+        case 'FILTER_BY_CATEGORY' : {
             const newObject = Object.assign({}, initialState);
+            console.log(action.payload);
+            newObject.equipmentState = newObject.equipmentState.filter(elem => elem.category === action.payload.text ? elem : null);
+            const index = newObject.filtersState[action.payload.category].indexOf(action.payload.text);
+            const element = newObject.filtersState[action.payload.category].splice(index, 1);
+            newObject.filterSearch[action.payload.category] = element[0];
+            newObject.filtersState[action.payload.category].unshift(element[0]);
+            newObject.filterSearch.category = action.payload.text;
+            console.log(newObject);
+            return newObject;
+        }
+        case 'FILTER' : {
             // поиск по категории и городу
             if (action.payload.city !== 'Все города' && action.payload.category !== 'Все категории' && !action.payload.text && action.payload.category !== '' && action.payload.city !== '') {
+                const newObject = Object.assign({}, initialState);
                 console.log(action.payload);
                 console.log('поиск по категории и городу');
                 newObject.equipmentState = newObject.equipmentState.filter(elem => elem.city === action.payload.city && elem.category === action.payload.category);
                 return newObject;
             }
             // поиск по категории и городу и инпуту
-            if ((action.payload.city !== 'Все города' && action.payload.city !== '') && (action.payload.category !== 'Все категории' && action.payload.category !== '') && action.payload.text) {
+            if ((action.payload.city !== 'Все города' || action.payload.city !== '') && (action.payload.category !== 'Все категории' || action.payload.category !== '') && action.payload.text) {
+                const newObject = Object.assign({}, initialState);
                 console.log('поиск по категории и городу и инпуту');
                 newObject.equipmentState = newObject.equipmentState.filter(elem => elem.city === action.payload.city && elem.category === action.payload.category);
                 newObject.equipmentState = newObject.equipmentState.map(elem => elem.header.toLowerCase().indexOf(action.payload.text) === -1 ? elem : null);
@@ -45,6 +59,7 @@ export default function reducer(state = initialState, action) {
             }
             // поиск по категории и инпуту
             if (action.payload.city === 'Все города' && action.payload.category !== 'Все категории' && action.payload.text) {
+                const newObject = Object.assign({}, initialState);
                 console.log('поиск по категории и инпуту');
                 newObject.equipmentState = newObject.equipmentState.filter(elem => elem.city === action.payload.city && elem.category === action.payload.category);
                 newObject.equipmentState = newObject.equipmentState.map(elem => elem.header.toLowerCase().indexOf(action.payload.text) === -1 ? elem : null);
@@ -53,6 +68,7 @@ export default function reducer(state = initialState, action) {
 
             // поиск по городу и инпуту
             if (action.payload.city !== 'Все города' && action.payload.text && action.payload.category === 'Все категории') {
+                const newObject = Object.assign({}, initialState);
                 console.log('поиск по инпуту и городу');
                 newObject.equipmentState = newObject.equipmentState.filter(elem => elem.city === action.payload.city);
                 newObject.equipmentState = newObject.equipmentState.map(elem => elem.header.toLowerCase().indexOf(action.payload.text) === -1 ? elem : null);
@@ -60,6 +76,7 @@ export default function reducer(state = initialState, action) {
             }
             //поиск по инпуту
             if ((action.payload.city === '' || action.payload.city === 'Все города') && (action.payload.category === '' || action.payload.category === 'Все категории') && action.payload.text) {
+                const newObject = Object.assign({}, initialState);
                 console.log('поиск по инпуту');
                 const newArrayStringsItem = newObject.equipmentState.map(elem => {
                     return elem.header.split(' ')
@@ -73,20 +90,27 @@ export default function reducer(state = initialState, action) {
                 return newObject;
             }
             //по городу
-            if (action.payload.city !== 'Все города' && (action.payload.caregory === 'Все города' || action.payload.category === '') && !action.payload.text) {
+            if (action.payload.city !== 'Все города' && (action.payload.category === 'Все города' || action.payload.category === '') && !action.payload.text && action.payload.city !== '') {
+                const newObject = Object.assign({}, initialState);
+                console.log(action.payload);
                 console.log('поиск по городу');
-                newObject.equipmentState = newObject.equipmentState.filter(elem => elem.city === action.payload);
-                newObject.filterSearch.city = action.payload;
+                newObject.equipmentState = newObject.equipmentState.filter(elem => elem.city === action.payload.city);
+                newObject.filterSearch.city = action.payload.city;
+                console.log(newObject);
                 return newObject;
             }
             //по категории
-            if ((action.payload.city === 'Все города' || action.payload.city === '') && action.payload.category !== 'Все категории' && !action.payload.text) {
+            if ((action.payload.city === 'Все города' || action.payload.city === '') && action.payload.category !== 'Все категории' && !action.payload.text && action.payload.category !== '') {
+                const newObject = Object.assign({}, initialState);
                 console.log('поиск по категории');
+                console.log(action.payload);
                 newObject.equipmentState = newObject.equipmentState.filter(elem => elem.category === action.payload.category ? elem : null);
-                newObject.filterSearch.category = action.payload;
+                newObject.filterSearch.category = action.payload.category;
                 return newObject;
             }
-            return newObject;
+            console.log('ОТДАЛ ВЕСЬ СПИСОК');
+            console.log(state);
+            return state;
         }
         case 'ADD_FILTER': {
             const newObject = Object.assign({}, initialState);
@@ -94,17 +118,17 @@ export default function reducer(state = initialState, action) {
                 const index = newObject.filtersState[action.payload.category].indexOf(action.payload.text);
                 const element = newObject.filtersState[action.payload.category].splice(index, 1);
                 newObject.filterSearch[action.payload.category] = element[0];
-                newObject.filtersState[action.payload.category].unshift(element);
+                newObject.filtersState[action.payload.category].unshift(element[0]);
                 return newObject;
             }
             if(action.payload.text === 'Все категории' || action.payload.text === 'Все города'){
                 const index = newObject.filtersState[action.payload.category].indexOf(action.payload.text);
                 const element = newObject.filtersState[action.payload.category].splice(index, 1);
                 newObject.filterSearch[action.payload.category] = '';
-                newObject.filtersState[action.payload.category].unshift(element);
+                newObject.filtersState[action.payload.category].unshift(element[0]);
                 return newObject;
             }
-            return newObject;
+            return state;
         }
         case 'CHANGE_INPUT_VALUE': {
             const newObject = Object.assign({}, initialState);

@@ -8,7 +8,9 @@ function HowStart(props){
         <div className={'how_start'}>
             <h3>{props.start.header}</h3>
             <p>{props.start.text}</p>
-            <Link to={'/search'}>Найти оборудование</Link>
+            <Link to={'/search'}
+            onClick={() => props.sendRequest()}
+            >Найти оборудование</Link>
         </div>
     )
 }
