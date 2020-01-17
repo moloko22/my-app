@@ -7,3 +7,6 @@
 .filter_by_citys, .filter_type_of_equipment {
     margin: 0 10px;
 }
+.filter_by_citys select, .filter_type_of_equipment select{
+    border: none;
+}

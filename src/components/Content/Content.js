@@ -35,6 +35,7 @@ class Content extends Component {
         const city = this.props.cityFilter;
         const category = this.props.categoryFilter;
         const cards = this.props.cards;
+        this.props.changeHistory('/search');
         this.props.searchRequest( text, city, category, cards );
     };
     onChangeFilter = (text, filter) =>{

@@ -1,8 +1,9 @@
 import React, { Component }from 'react';
 
+import history from "./history";
 import Provider from "react-redux/lib/components/Provider";
 import store from '../src/store/store'
-import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import { Router, Switch, Route } from 'react-router-dom'
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import Content from "./components/Content/Content";
@@ -18,6 +19,9 @@ class App extends Component {
             card: {},
         }
     }
+    changeHistory = (value) =>{
+        history.push(value);
+    };
     selectCard = (name, elem) =>{
         this.setState({
             card: elem,
@@ -28,16 +32,22 @@ class App extends Component {
             <Provider store={store}>
                 <section className={'app_wrapper'}>
                     <div className={'app'}>
-                        <Header/>
-                        <BrowserRouter>
+                        <Router history={history}>
+                            <Header changeHistory={this.changeHistory}/>
                             <Switch>
-                                <Route path={"/"} exact component={() => <Content selectCard={this.selectCard} />}/>
-                                <Route path={'/card/'} component={() => <Card card={this.state.card}/>}/>
-                                <Route path={"/search"} exact component={() => <SearchPage selectCard={this.selectCard}/>}/>
-                                <Route path={"/account"} exact component={() => <PersonalPage />}/>
+                                <Route path={"/"} exact component={() => <Content selectCard={this.selectCard}
+                                                                                    changeHistory={this.changeHistory}
+                                />}/>
+                                <Route path={'/card/'} component={() => <Card card={this.state.card}
+                                                                              changeHistory={this.changeHistory}
+                                />}/>
+                                <Route path={"/search"} exact component={() => <SearchPage selectCard={this.selectCard}
+                                                                                           changeHistory={this.changeHistory}
+                                />}/>
+                                <Route path={"/account"} exact component={() => <PersonalPage changeHistory={this.changeHistory} />}/>
                             </Switch>
-                        </BrowserRouter>
-                        <Footer/>
+                            <Footer/>
+                        </Router>
                     </div>
                 </section>
             </Provider>
