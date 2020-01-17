@@ -4,3 +4,6 @@
     border: none;
     font-size: 22px;
 }
+.filter_by_citys, .filter_type_of_equipment {
+    margin: 0 10px;
+}

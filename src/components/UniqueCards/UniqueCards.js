@@ -10,10 +10,15 @@ class UniqueCards extends Component {
             return (
                 <Link to={`/card/${elem.id}`} className={'unique_card_link'} key={elem.id}>
                     <div  className={'unique_card'} onClick={() =>this.props.selectCard('card', elem)}>
-                        <img src={elem.img} alt="little_logo" />
-                        <h3>{elem.city}</h3>
-                        <p>{elem.header}</p>
-                        <span>от {elem.price} руб.</span>
+                        <div className={'unique_card_image'}>
+                            <img src={elem.img} alt="little_logo" />
+                        </div>
+                        <div className={'unique_card_info'}>
+                            <h3>{elem.header}</h3>
+                            <h4>{elem.city}, {elem.company}</h4>
+                            <p>{elem.text}</p>
+                            <p><span>{elem.price} руб.</span> за сутки</p>
+                        </div>
                     </div>
                 </Link>
             )
