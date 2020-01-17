@@ -46,44 +46,45 @@ export default function reducer(state = initialState, action) {
                 return newObject;
             }
             // поиск по категории и городу и инпуту
-            if ((action.payload.city !== 'Все города' || action.payload.city !== '') && (action.payload.category !== 'Все категории' || action.payload.category !== '') && action.payload.text) {
+            if (action.payload.city !== 'Все города' && action.payload.category !== 'Все категории' && action.payload.category !== '' && action.payload.text && action.payload.city !== '') {
                 const newObject = Object.assign({}, initialState);
                 console.log('поиск по категории и городу и инпуту');
                 newObject.equipmentState = newObject.equipmentState.filter(elem => elem.city === action.payload.city && elem.category === action.payload.category);
-                newObject.equipmentState = newObject.equipmentState.map(elem => elem.header.toLowerCase().indexOf(action.payload.text) === -1 ? elem : null);
-                newObject.equipmentState = newObject.equipmentState.filter(elem => elem.header === action.payload.text);
+                let newArray = newObject.equipmentState;
+                newArray = newArray.filter(elem => elem.header.toLowerCase().includes(action.payload.text.toLowerCase()));
+                newObject.equipmentState = newArray;
                 return newObject;
             }
             // поиск по категории и инпуту
-            if (action.payload.city === 'Все города' && action.payload.category !== 'Все категории' && action.payload.text) {
+            if ((action.payload.city === 'Все города' || action.payload.city === '') && action.payload.category !== 'Все категории' && action.payload.text ) {
                 const newObject = Object.assign({}, initialState);
                 console.log('поиск по категории и инпуту');
-                newObject.equipmentState = newObject.equipmentState.filter(elem => elem.city === action.payload.city && elem.category === action.payload.category);
-                newObject.equipmentState = newObject.equipmentState.map(elem => elem.header.toLowerCase().indexOf(action.payload.text) === -1 ? elem : null);
+                let newArrayCategory = [];
+                newArrayCategory = newObject.equipmentState.filter(elem => elem.category === action.payload.category);
+                let newArray = newArrayCategory;
+                newArray = newArray.filter(elem => elem.header.toLowerCase().includes(action.payload.text.toLowerCase()));
+                newObject.equipmentState = newArray;
                 return newObject;
             }
 
             // поиск по городу и инпуту
-            if (action.payload.city !== 'Все города' && action.payload.text && action.payload.category === 'Все категории') {
+            if (action.payload.city !== 'Все города' && action.payload.text && (action.payload.category === 'Все категории' || action.payload.category === '')) {
                 const newObject = Object.assign({}, initialState);
                 console.log('поиск по инпуту и городу');
-                newObject.equipmentState = newObject.equipmentState.filter(elem => elem.city === action.payload.city);
-                newObject.equipmentState = newObject.equipmentState.map(elem => elem.header.toLowerCase().indexOf(action.payload.text) === -1 ? elem : null);
+                let newArrayCity = [];
+                newArrayCity = newObject.equipmentState.filter(elem => elem.city === action.payload.city);
+                let newArray = newArrayCity;
+                newArray = newArray.filter(elem => elem.header.toLowerCase().includes(action.payload.text.toLowerCase()));
+                newObject.equipmentState = newArray;
                 return newObject;
             }
             //поиск по инпуту
             if ((action.payload.city === '' || action.payload.city === 'Все города') && (action.payload.category === '' || action.payload.category === 'Все категории') && action.payload.text) {
                 const newObject = Object.assign({}, initialState);
                 console.log('поиск по инпуту');
-                const newArrayStringsItem = newObject.equipmentState.map(elem => {
-                    return elem.header.split(' ')
-                });
-                newObject.equipmentState.map((elem, i) => elem.arrayStrings = newArrayStringsItem[i]);
-                const newArray = [];
-                newObject.equipmentState.forEach((elem, i) => {
-                    newArray.push(elem.arrayStrings.filter(item => item.toLocaleString().toLowerCase() === action.payload.text.toLocaleString().toLowerCase() ? elem : null));
-                });
-                newObject.equipmentState = newArray.map(elem => elem.length > 0);
+                let newArray = newObject.equipmentState;
+                newArray = newArray.filter(elem => elem.header.toLowerCase().includes(action.payload.text.toLowerCase()));
+                newObject.equipmentState = newArray;
                 return newObject;
             }
             //по городу
@@ -92,7 +93,6 @@ export default function reducer(state = initialState, action) {
                 console.log('поиск по городу');
                 newObject.equipmentState = newObject.equipmentState.filter(elem => elem.city === action.payload.city);
                 newObject.filterSearch.city = action.payload.city;
-                console.log(newObject);
                 return newObject;
             }
             //по категории
