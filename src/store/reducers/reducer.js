@@ -104,8 +104,8 @@ export default function reducer(state = initialState, action) {
                 return newObject;
             }
             console.log('ОТДАЛ ВЕСЬ СПИСОК');
-            console.log(state);
-            return state;
+            console.log(initialState);
+            return initialState;
         }
         case 'ADD_FILTER': {
             const newObject = Object.assign({}, initialState);
