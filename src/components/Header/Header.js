@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import "./Header.css";
-import { Icon } from 'antd';
+
 class Header extends Component {
     render() {
         return (

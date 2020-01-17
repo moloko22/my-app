@@ -1,4 +1,5 @@
 .unique_info{
+    margin-top: 60px;
     display: flex;
     flex-direction: column;
 }
