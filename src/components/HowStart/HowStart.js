@@ -13,7 +13,6 @@ function HowStart(props){
                       onClick={() => props.sendRequest()}
                 >Найти оборудование</Link>
             </div>
-
         </div>
     )
 }

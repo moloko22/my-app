@@ -9,6 +9,7 @@ import Content from "./components/Content/Content";
 import SearchPage from "./components/SearchPage/SearchPage";
 import Card from "./components/Card/Card";
 import './App.css';
+import PersonalPage from "./components/PersonalPage/PersonalPage";
 
 class App extends Component {
     constructor(props) {
@@ -33,6 +34,7 @@ class App extends Component {
                                 <Route path={"/"} exact component={() => <Content selectCard={this.selectCard} />}/>
                                 <Route path={'/card/'} component={() => <Card card={this.state.card}/>}/>
                                 <Route path={"/search"} exact component={() => <SearchPage selectCard={this.selectCard}/>}/>
+                                <Route path={"/account"} exact component={() => <PersonalPage />}/>
                             </Switch>
                         </BrowserRouter>
                         <Footer/>
