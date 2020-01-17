@@ -11,12 +11,12 @@ class Header extends Component {
                     />
                 </div>
                 <div className={"navbar"}>
-                    <Menu>
-                        <Menu.Item key="logout" className={'menu_item'}>
+                    <ul>
+                        <li key="logout" className={'menu_item'}>
                             <Icon type="user"/>
-                            <a href={'/account'}>Войти</a>
-                        </Menu.Item>
-                    </Menu>
+                            <a href={'/account'}>Марина</a>
+                        </li>
+                    </ul>
                 </div>
             </header>
         );

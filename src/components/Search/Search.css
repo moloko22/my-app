@@ -5,23 +5,23 @@
 }
 .search input {
     padding-left: 15px;
-    font-size: 19px;
+    font-size: 23px;
     min-height: 64px;
     width: 800px;
     background: #FFFFFF;
     border: 2px solid #828282;
     box-sizing: border-box;
-    border-radius: 4px;
+    border-radius: 45px;
 }
 .search button {
     position: relative;
-    top: -2px;
-    right: 135px;
+    top: -4px;
+    right: 138px;
     border: 1px solid green;
     width: 132px;
     min-height: 52px;
     background: #0EB757;
-    border-radius: 8px;
+    border-radius: 22px;
     height: 21px;
     font-family: SF Pro Display, serif;
     font-style: normal;
