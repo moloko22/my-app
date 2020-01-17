@@ -1,11 +1,12 @@
 .one_card_wrapper{
     margin-bottom: 60px;
-    min-height: 1000px;
+    min-height: 400px;
     width: 100%;
     display: flex;
     justify-content: center;
 }
 .one_card {
+    margin-top: 50px;
     display: flex;
     max-height: 400px;
     justify-content: space-around;

@@ -1,17 +1,16 @@
 import React, {Component} from 'react';
 
 import "./Header.css";
-import {Link} from "react-router-dom";
 
 class Header extends Component {
     render() {
         return (
             <header>
                 <div className={'logo'}>
-                    <Link to={'/'}>
+                    <a href={'/'}>
                         <img src="https://www.sberbank.ru/portalserver/content/atom/contentRepository/content?id=35f8876c-36fe-48b6-83d0-1ec3388a22f3"
                              alt="sber_logo"/>
-                    </Link>
+                    </a>
                 </div>
                 <div className={"navbar"}>
                     <ul>
