@@ -1,6 +1,6 @@
 .process {
     width: 1350px;
-    min-height: 700px;
+    min-height: 600px;
     margin-top: 50px;
     display: flex;
     flex-direction: column;
@@ -9,7 +9,7 @@
 }
 
 .process_header {
-    margin-top: 60px;
+    margin-top: 65px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -21,6 +21,7 @@
     min-height: 4px;
     background: #0EB757;
     border-radius: 4px;
+    margin-bottom: 40px;
 }
 
 .process h3 {
