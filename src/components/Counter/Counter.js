@@ -6,7 +6,7 @@ class Counter extends Component {
         return array.map(elem => {
             return (
                 <div key={elem.counter}>
-                    <h3>{elem.counter + '+'}</h3>
+                    <h3>{elem.counter + ' +'}</h3>
                     <span>{elem.spanText}</span>
                     <p>{elem.text}</p>
                 </div>

@@ -17,6 +17,7 @@ class CardsCategory extends Component {
                         })
                         }
                     </ul>
+                        <span>...</span>
                 </div>
                 </Link>
 

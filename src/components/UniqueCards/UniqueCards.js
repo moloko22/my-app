@@ -14,9 +14,8 @@ class UniqueCards extends Component {
                             <img src={elem.img} alt="little_logo" />
                         </div>
                         <div className={'unique_card_info'}>
-                            <h3>{elem.header}</h3>
-                            <h4>{elem.city}, {elem.company}</h4>
-                            <p>{elem.text}</p>
+                            <h3>{elem.city}</h3>
+                            <h4>{elem.header}</h4>
                             <p><span>{elem.price} руб.</span> за сутки</p>
                         </div>
                     </div>

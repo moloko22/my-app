@@ -20,8 +20,8 @@ class App extends Component {
         }
     }
     orderRequest = (obj) =>{
-        console.log(obj);
         store.dispatch({type: 'ORDER_REQUEST', payload: obj});
+        this.changeHistory('/');
     };
     selectCard = (name, elem) =>{
         this.setState({

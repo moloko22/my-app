@@ -13,7 +13,7 @@ import HowStart from "../HowStart/HowStart";
 
 const start = {
     header: 'C чего начать?',
-    text: 'Не нужно покупать дорогостоящее оборудования и брать в штат уникальных специалистов',
+    text: 'Подберите необходимое оборудование и оставьте заявку прямо сейчас!',
 };
 const process = {
     header: 'Простой и удобный процесс',
@@ -48,7 +48,7 @@ class Content extends Component {
             <main>
                 <section className={'search_wrapper'}>
                     <SearchHeader header={'Технологические сервисы'}
-                                  paragraph={'Заказывайте услуги прототипирования, испытаний, метрологии и биомедицины'}
+                                  paragraph={'Совместная площадка Сбербанка и Сколково'}
                     />
                     <Search inputValue={this.props.inputValue}
                             onChangeInputValue={this.onChangeInputValue}
