@@ -8,20 +8,26 @@
     border-radius: 6px;
 }
 .order_card_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
     padding: 15px 23px;
     background: #F2F3F5;
     border-radius: 6px 6px 0 0;
 }
-.order_card_header p:first-of-type {
+.order_card_header_dates p {
     font-family: Circe, serif;
     font-style: normal;
-    font-weight: bold;
     font-size: 16px;
     line-height: 24px;
     color: #000000;
 }
-.order_card_header p:last-of-type {
+.order_card_header_dates p span {
+    font-weight: bold;
+}
+.order_card_header_status p{
+    margin-right: 20px;
     font-family: Circe, serif;
     font-style: normal;
     font-weight: bold;
@@ -51,6 +57,7 @@
     color: #333333;
 }
 .order_card_info p:first-of-type {
+    margin-top: 25px;
     font-family: Circe, serif;
     font-style: normal;
     font-weight: normal;
@@ -58,6 +65,12 @@
     line-height: 21px;
     color: #000000;
     opacity: 0.5;
+}
+.order_card_info p:nth-child(even){
+    margin-top: 35px;
+}
+.order_card_info p span {
+    font-weight: bold;
 }
 .order_card_info p:last-of-type span{
     font-family: Circe, serif;
@@ -68,12 +81,14 @@
     color: #000000;
 }
 .order_card_info p:last-of-type{
+    margin-top: -6px;
     font-family: Circe, serif;
     font-style: normal;
     font-weight: normal;
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 14px;
+    line-height: 21px;
     color: #000000;
+    opacity: 0.5;
 }
 .order_card_info button {
     font-weight: bold;
@@ -85,6 +100,11 @@
     background-color: #fff;
     border: none;
 }
-.order_card_image{
-
+.order_card_image_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.order_card_quantity p{
+    margin-top: 25px;
 }

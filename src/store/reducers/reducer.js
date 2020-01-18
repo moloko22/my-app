@@ -1,7 +1,5 @@
 const initialState = {
-        orders: [
-            {status:  'Заявка отправлена',date: '16 февраля', category:'Прототипирование', year: 2018, company: 'OOO-Oculus', city: 'Москва', header: 'Fortus 900MC - промышленный 3D принтер c самой большой рабочей зоной', id: 1, price: 2500,  text: 'Прибор для ультразвуковой фрагментации, обеспечивает быструю и надежную фрагментацию ДНК до длин, оптимальных для приготовления библиотек для NGS (секвенирования нового поколения). Диапазон длин фрагментов – от 150 до 5000 пар нуклеотидов', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAfZCLU0WyGOeB4IVbmvLuPFJ3IAmVd7jh5cq11PrjamF1BB5l&s'}
-        ],
+        orders: [],
         filterSearch: {
             city: '',
             category: '',
