@@ -10,23 +10,19 @@
     display: flex;
     max-height: 400px;
     justify-content: space-around;
-    background: #F5F8FE;
     width: 1200px;
-    box-shadow: 4px 4px 8px rgba(178, 184, 191, 0.25);
     padding: 25px;
 }
 
 .one_card_info {
-    max-height: 450px;
-    margin: -65px 0 0 40px;
+    max-height: 300px;
+    margin: 0 0 0 40px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 .one_card_images {
-    max-height: 250px;
-    padding: 15px;
-    width: 350px;
+    background-color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -34,7 +30,13 @@
     box-sizing: border-box;
     border-radius: 6px;
 }
+.one_card_images img{
+    padding: 15px;
+    width: 350px;
+
+}
 .one_card_info h3 {
+    margin-top: -70px;
     font-family: var(--CIRCE-fontsize);
     font-style: normal;
     font-weight: bold;
@@ -43,28 +45,30 @@
     color: #000000;
 }
 .one_card_info h4 {
-    margin-top: -150px;
+    margin-top: -80px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    color: #333333;
     margin-left: 5px;
     font-family: var(--CIRCE-fontsize);
-    font-style: normal;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 17px;
-    color: #333333;
 }
 .one_card_info p{
-    margin-top: -100px;
+    margin-top: -50px;
     width: 450px;
     font-family: var(--CIRCE-fontsize);
     font-style: normal;
     font-size: 16px;
     line-height: 20px;
-    color: #333333;
     display: flex;
     justify-content: flex-end;
+    font-weight: normal;
+    color: #000000;
+    opacity: 0.5;
 }
-.one_card_form {
-
+.one_card_form{
+    min-height: 420px;
     padding: 25px;
     border: 1px solid #E0E0E0;
     box-sizing: border-box;
@@ -75,31 +79,38 @@
     font-style: normal;
     font-size: 16px;
     line-height: 20px;
+    font-weight: bold;
     color: #333333;
     display: flex;
     justify-content: flex-start;
 }
 
-.one_card_form p span{
-    display: flex;
-    font-weight: bold;
-}
 .one_card_form form {
     display: flex;
     flex-direction: column;
     justify-content: center;
     width: 205px;
 }
-.one_card_form form button {
+.one_card_form form label {
+    margin: 5px;
     font-family: var(--CIRCE-fontsize);
     font-style: normal;
-    font-weight: bold;
-    font-size: 18px;
+    font-weight: normal;
+    font-size: 14px;
     line-height: 21px;
+    color: #000000;
+}
+.one_card_form form button {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 27px;
     color: #FFFFFF;
-    width: 180px;
+    font-family: var(--CIRCE-fontsize);
+    width: 220px;
     min-height: 45px;
     background: #0EB757;
+    border: 0;
     border-radius: 40px;
     margin-top: 35px;
 }

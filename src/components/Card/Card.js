@@ -117,7 +117,7 @@ class Card extends Component {
                         <p>{this.props.card.text}</p>
                     </div>
                     <div className={'one_card_form'}>
-                        <p><span>{this.props.card.price} руб.</span> за сутки</p>
+                        <p>{this.props.card.price} руб. за сутки</p>
                         <form action={''}>
                             <label htmlFor="date_from">Начало аренды:</label>
                             <DatePicker name={'dataFrom'}
