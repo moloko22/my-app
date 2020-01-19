@@ -1,2 +1,47 @@
+header {
+    background: #FFFFFF;
+    display: flex;
+}
+.logo {
+    margin: 12px 0 13px 30px;
+    display: flex;
+}
+.logo_first {
+    display: flex;
+    align-items: center;
+}
+.logo_second {
+    margin-left: 45px;
+    width: 52px;
+    height: 52px;
+}
+.navbar{
+    margin-top: -50px;
+    margin-right: 40px;
+    flex: 3;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.navbar li {
+    display: flex;
+    align-items: center;
+    font-size: 22px;
+}
+
+.navbar li:hover {
+    text-decoration: underline;
+}
+.navbar li a{
+    display: flex;
+    align-items: center;
+    font-family: var(--CIRCE-fontsize);
+    font-style: normal;
+    font-weight: normal;
+    font-size: 19px;
+    line-height: 31px;
+    color: #333333;
+    text-decoration: none;
+}
 
 

@@ -1,0 +1,41 @@
+.counter {
+    display: flex;
+    justify-content: space-around;
+    width: 57%;
+}
+.counter div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.counter p{
+    margin-top: 15px;
+    width: 170px;
+    text-align: center;
+    font-family: var(--CIRCE-fontsize);
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 27px;
+    color: #333333;
+}
+.counter div h3 {
+    font-family: var(--CIRCE-fontsize);
+    font-style: normal;
+    font-weight: 800;
+    font-size: 80px;
+    line-height: 118px;
+    letter-spacing: 0.06em;
+    color: #0EB757;
+}
+.counter div span {
+    margin-top: -50px;
+    text-transform: uppercase;
+    font-family: var(--CIRCE-fontsize);
+    font-style: normal;
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 44px;
+    text-align: center;
+    color: #757A7D;
+}

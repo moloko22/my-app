@@ -1,0 +1,55 @@
+.card {
+    font-size: 21px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 400px;
+    color: #000;
+    text-decoration: none;
+}
+.cards_category{
+    margin-left: 80px;
+    margin-top: 60px;
+    width: 900px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.category span {
+    margin: 10px 0 0 60px;
+    font-family: var(--CIRCE-fontsize);
+    font-style: normal;
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 24px;
+    color: #E0E0E0;
+}
+.category {
+    flex: 1;
+    width: 425px;
+    margin: 10px;
+    padding: 10px;
+    background: #FFFFFF;
+    box-shadow: 0 4px 8px rgba(178, 184, 191, 0.25);
+    border-radius: 4px;
+}
+
+.category h2 {
+    margin: 20px 0 0 15px;
+    font-family: var(--CIRCE-fontsize);
+    font-style: normal;
+    font-weight: normal;
+    font-size: 28px;
+    line-height: 31px;
+    color: #333333;
+}
+
+.category li {
+    margin: 25px 15px;
+    font-family: var(--CIRCE-fontsize);
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    color: #333333;
+}
