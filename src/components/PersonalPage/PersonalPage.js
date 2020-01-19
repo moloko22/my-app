@@ -7,7 +7,6 @@ import './PersonalPage.css';
 class PersonalPage extends Component {
     renderOrders(array){
         return array.map(elem => {
-            console.log(elem);
             return <OrderCard item={elem} key={elem.id}/>
         })
     }
@@ -16,7 +15,7 @@ class PersonalPage extends Component {
             <section className={'personal_section'}>
                 <div className={'personal_header'}>
                     <h3>Личный кабинет</h3>
-                    <h4>Заявки</h4>
+                    <h4>{this.props.orders.length ? 'Заявки' : 'Заявок нет'}</h4>
                 </div>
                 <div className={'personal_orders'}>
                     {this.renderOrders(this.props.orders)}
@@ -28,8 +27,5 @@ class PersonalPage extends Component {
 const mapStateToProps = state => ({
     orders: state.orders
 });
-const mapDispatchToProps = dispatch => ({
 
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(PersonalPage);
+export default connect(mapStateToProps)(PersonalPage);
