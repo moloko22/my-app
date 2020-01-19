@@ -107,6 +107,12 @@ class Card extends Component {
     render() {
         return (
             <div className={'one_card_wrapper'}>
+                <div className={'one_card_go_back_link'}>
+                    <svg width="8" height="13" viewBox="0 0 4 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 12L1 6.5L7 1" stroke="#191D31" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                    <a onClick={() =>this.props.changeHistory('/search')}>Назад к списку</a>
+                </div>
                 <div className={'one_card'}>
                     <div className={'one_card_images'}>
                         <img src={`${this.props.card.img}`} alt=""/>

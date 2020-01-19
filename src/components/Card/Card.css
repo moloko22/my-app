@@ -3,7 +3,16 @@
     min-height: 400px;
     width: 100%;
     display: flex;
+    flex-direction: row;
     justify-content: center;
+}
+.one_card_go_back_link a{
+    font-family: var(--CIRCE-fontsize);
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 27px;
+    color: #000000;
 }
 .one_card {
     margin-top: 50px;
@@ -15,6 +24,7 @@
 }
 
 .one_card_info {
+    min-height: 450px;
     max-height: 300px;
     margin: 0 0 0 40px;
     display: flex;
@@ -45,7 +55,7 @@
     color: #000000;
 }
 .one_card_info h4 {
-    margin-top: -80px;
+    margin-top: -65px;
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
