@@ -47,6 +47,10 @@ class Content extends Component {
         return (
             <main>
                 <section className={'search_wrapper'}>
+                    <div className={'header_background_image'}>
+                        <img src="https://rnd.sk.ru/images/img-main-p-1600.jpeg" alt="header_background"/>
+
+                    </div>
                     <SearchHeader header={'Технологические сервисы'}
                                   paragraph={'Совместная площадка Сбербанка и Сколково'}
                     />
