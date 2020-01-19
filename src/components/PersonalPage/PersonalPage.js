@@ -16,7 +16,7 @@ class PersonalPage extends Component {
             <section className={'personal_section'}>
                 <div className={'personal_header'}>
                     <h3>Личный кабинет</h3>
-                    <h4>Ваши заявки</h4>
+                    <h4>Заявки</h4>
                 </div>
                 <div className={'personal_orders'}>
                     {this.renderOrders(this.props.orders)}

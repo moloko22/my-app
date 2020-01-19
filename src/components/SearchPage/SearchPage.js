@@ -2,9 +2,10 @@ import React, {Component} from 'react';
 
 import connect from "react-redux/lib/connect/connect";
 import Search from "../Search/Search";
-import UniqueCards from "../UniqueCards/UniqueCards";
 import Filters from "../Filters/Filters";
 import './SearchPage.css';
+import SearchPageCard from "../SearchPageCard/SearchPageCard";
+
 
 class SearchPage extends Component {
     onChangeInputValue = (text) =>{
@@ -30,8 +31,8 @@ class SearchPage extends Component {
                 <Filters filters={this.props.filters}
                          onChangeFilter={this.onChangeFilter}
                 />
-                <div className={'cards_info'}>По вашему запросу найдено {this.props.cards.length} карточки(а)</div>
-                <UniqueCards cards={this.props.cards}
+                <div className={'cards_info'}>По вашему запросу найдено {this.props.cards.length} прибор(а, ов)</div>
+                <SearchPageCard cards={this.props.cards}
                              selectCard={this.props.selectCard}/>
             </div>
         );
