@@ -1,11 +1,17 @@
+.process_wrapper {
+    display: flex;
+    justify-content: center;
+    width: 1900px;
+    background-color: #F5F8FE;
+}
 .process {
-    width: 100%;
+    width: 1400px;
     min-height: 680px;
     margin-top: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #F5F8FE;;
+
 }
 
 .process_header {

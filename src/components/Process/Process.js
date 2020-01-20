@@ -4,6 +4,7 @@ import './Process.css';
 
 function Process(props){
     return(
+        <section className={'process_wrapper'}>
         <section className={'process'}>
             <div className={'process_header'}>
                 <h3>{props.process.header}</h3>
@@ -84,6 +85,7 @@ function Process(props){
                     <p>Пользуйтесь оборудованием</p>
                 </div>
             </div>
+        </section>
         </section>
     )
 };

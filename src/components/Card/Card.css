@@ -2,13 +2,18 @@
     margin-bottom: 60px;
     min-height: 400px;
     width: 100%;
-    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .one_card_go_back_link {
+    width: 1400px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     position: relative;
     left: 90px;
     top: 40px;
-    width: 200px;
 }
 .one_card_go_back_link a{
     margin-left: 15px;

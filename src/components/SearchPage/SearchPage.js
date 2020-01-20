@@ -31,7 +31,7 @@ class SearchPage extends Component {
                 <Filters filters={this.props.filters}
                          onChangeFilter={this.onChangeFilter}
                 />
-                <div className={'cards_info'}>По вашему запросу найдено {this.props.cards.length} прибор</div>
+                <div className={'cards_info'}>По вашему запросу найдено {this.props.cards.length} оборудования</div>
                 <SearchPageCard cards={this.props.cards}
                              selectCard={this.props.selectCard}/>
             </div>
