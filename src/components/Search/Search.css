@@ -1,3 +1,9 @@
+.search svg {
+    z-index: 9999;
+    position: relative;
+    top: 10px;
+    left: 5px;
+}
 .search {
     margin: 55px 0 0 40px;
     width: 70%;
@@ -5,23 +11,25 @@
     display: flex;
 }
 .search input {
-    padding-left: 25px;
+    margin-left: -50px;
+    padding-bottom: 10px;
+    padding-left: 60px;
     font-size: 23px;
     min-height: 64px;
     width: 800px;
     background: #FFFFFF;
     box-sizing: border-box;
+    box-shadow: 0 4px 8px rgba(178, 184, 191, 0.25);
     border-radius: 45px;
 }
 .search button {
     position: relative;
-    top: -3px;
-    right: 138px;
-    border: 0px solid green;
+    right: 135px;
+    border: 0 solid green;
     width: 132px;
-    min-height: 52px;
+    min-height: 58px;
     background: #0EB757;
-    border-radius: 22px;
+    border-radius: 45px;
     height: 21px;
     font-family: var(--CIRCE-fontsize);
     font-style: normal;

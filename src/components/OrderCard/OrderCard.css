@@ -36,8 +36,13 @@
     color: #0EB757;
 }
 .order_card_body {
+    width: 100%;
     padding: 23px;
     display: flex;
+    justify-content: space-between;
+}
+.order_card_info {
+    width: 400px;
 }
 
 .order_card_info h3{
@@ -47,6 +52,9 @@
     font-size: 18px;
     line-height: 27px;
     color: #000000;
+}
+.order_card_info h4 span {
+    text-transform: uppercase;
 }
 .order_card_info h4{
     font-family: var(--CIRCE-fontsize);
@@ -104,6 +112,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+.order_card_image img{
+    width: 350px;
 }
 .order_card_quantity p{
     margin-top: 25px;

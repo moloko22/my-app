@@ -2,7 +2,6 @@
     margin-bottom: 50px;
     display: flex;
     flex-direction: column;
-
 }
 .unique_card_link_search{
     margin: 5px;
@@ -13,6 +12,8 @@
 
 }
 .unique_card_search{
+    box-shadow: 0 4px 8px rgba(178, 184, 191, 0.25);
+    border-radius: 6px;
     background-color: #fff;
     display: flex;
     flex-direction: row;
@@ -42,6 +43,9 @@
     font-size: 18px;
     line-height: 27px;
     color: #000000;
+}
+.unique_card_info_search h4 span{
+    text-transform: uppercase;
 }
 .unique_card_info_search h4{
     font-family: var(--CIRCE-fontsize);

@@ -1,21 +1,23 @@
 .unique_cards{
+    width: 1200px;
     margin-bottom: 50px;
     display: flex;
-    flex-direction: row;
+    justify-content: space-around;
 }
 .unique_card_link {
-    margin: 5px;
+    z-index: 9999;
+    margin: 2px;
     min-height: 180px;
-    padding: 20px 0 0 20px;
+    padding: 10px 5px;
     color: #000;
     text-decoration: none;
 
 }
 .unique_card {
+    z-index: 9999;
     display: flex;
     flex-direction: column;
-    width: 255px;
-    padding: 15px;
+    width: 235px;
 }
 .unique_card_image {
     border-radius: 15px;
@@ -33,6 +35,7 @@
     margin: 10px 0 0 5px;
 }
 .unique_card_info h3{
+    text-transform: uppercase;
     font-family: var(--CIRCE-fontsize);
     font-style: normal;
     font-weight: bold;
@@ -43,7 +46,7 @@
 .unique_card_info h4{
     font-family: var(--CIRCE-fontsize);
     font-style: normal;
-    font-weight: normal;
+    font-weight: bold;
     font-size: 16px;
     line-height: 24px;
     color: #000000;

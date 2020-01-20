@@ -1,7 +1,6 @@
 import React from 'react';
 
 import './HowStart.css';
-import {Link} from "react-router-dom";
 
 function HowStart(props){
     return(
@@ -9,9 +8,8 @@ function HowStart(props){
             <div className={'how_start_info'}>
                 <h3>{props.start.header}</h3>
                 <p>{props.start.text}</p>
-                <Link to={'/search'}
-                      onClick={() => props.sendRequest()}
-                >Найти оборудование</Link>
+                <a onClick={() => props.sendRequest()}
+                >Найти оборудование</a>
             </div>
         </div>
     )

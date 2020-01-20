@@ -2,24 +2,30 @@
     margin-bottom: 60px;
     min-height: 400px;
     width: 100%;
-    display: flex;
-    flex-direction: row;
     justify-content: center;
 }
+.one_card_go_back_link {
+    position: relative;
+    left: 90px;
+    top: 40px;
+    width: 200px;
+}
 .one_card_go_back_link a{
+    margin-left: 15px;
     font-family: var(--CIRCE-fontsize);
     font-style: normal;
-    font-weight: normal;
+    font-weight: bold;
     font-size: 18px;
     line-height: 27px;
     color: #000000;
 }
 .one_card {
+    margin-left: 50px;
     margin-top: 50px;
     display: flex;
     max-height: 400px;
     justify-content: space-around;
-    width: 1200px;
+    width: 1250px;
     padding: 25px;
 }
 
@@ -53,6 +59,9 @@
     font-size: 18px;
     line-height: 22px;
     color: #000000;
+}
+.one_card_info h4 span {
+    text-transform: uppercase;
 }
 .one_card_info h4 {
     margin-top: -65px;
@@ -99,7 +108,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 205px;
+    width: 350px;
 }
 .one_card_form form label {
     margin: 5px;
@@ -109,6 +118,10 @@
     font-size: 14px;
     line-height: 21px;
     color: #000000;
+}
+#comment {
+    border-radius: 5px;
+    resize: none;
 }
 .one_card_form form button {
     font-style: normal;
@@ -123,4 +136,9 @@
     border: 0;
     border-radius: 40px;
     margin-top: 35px;
+}
+
+.inputs {
+    display: flex;
+    justify-content:space-around;
 }

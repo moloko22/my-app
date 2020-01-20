@@ -1,6 +1,8 @@
 .unique_equipments {
+    z-index: revert;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 350px;
+    width: 100%;
+    background: rgba(244, 247, 253, 0.71);
 }

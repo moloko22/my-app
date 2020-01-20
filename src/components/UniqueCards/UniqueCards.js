@@ -7,7 +7,7 @@ class UniqueCards extends Component {
     generateList(array){
         if(!array.length && !Array.isArray(array)) return;
         return array.map((elem, i) => {
-            if(i < 4){
+            if(i < 5){
                 return (
                     <Link to={`/card/${elem.id}`} className={'unique_card_link'} key={elem.id}>
                         <div  className={'unique_card'} onClick={() =>this.props.selectCard('card', elem)}>
@@ -17,7 +17,7 @@ class UniqueCards extends Component {
                             <div className={'unique_card_info'}>
                                 <h3>{elem.city}</h3>
                                 <h4>{elem.header}</h4>
-                                <p><span>{elem.price} руб.</span> за сутки</p>
+                                <p><span>от {elem.price} руб.</span></p>
                             </div>
                         </div>
                     </Link>

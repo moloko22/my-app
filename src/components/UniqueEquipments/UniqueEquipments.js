@@ -7,7 +7,7 @@ import './UniqueEquipments.css';
 class UniqueEquipments extends Component {
     render() {
         return (
-            <div>
+            <div className={'unique_equipments'}>
                 <UniqueInfo header={'Уникальное оборудование'}
                             text={'Не нужно покупать дорогостоящее оборудование и брать в штат уникальных специалистов.'}/>
                 <UniqueCards cards={this.props.cards}

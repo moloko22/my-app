@@ -10,7 +10,7 @@ function Process(props){
                 <p>{props.process.text}</p>
             </div>
             <div className={'process_images'}>
-                <div className={'process_images_block'}>
+                <div className={'process_images_block_first'}>
                     <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="50" cy="50" r="50" fill="white"/>
                         <path d="M56.9062 43.7812C56.3025 43.7812 55.8125 44.2713 55.8125 44.875C55.8125 45.4787 56.3025 45.9688 56.9062 45.9688C57.51 45.9688 58 45.4787 58 44.875C58 44.2713 57.51 43.7812 56.9062 43.7812Z" fill="#0EB757"/>
@@ -21,7 +21,12 @@ function Process(props){
                     <h4>Поиск</h4>
                     <p>Найти необходимое оборудование</p>
                 </div>
-                <div className={'process_images_block'}>
+                <div className={'ololo1'}>
+                    <svg width="126" height="39" viewBox="0 0 126 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M122.779 24.9859C92.965 34.9239 53.5916 41.8462 4.53418 2" stroke="#BDBDBD" strokeWidth="1.5" strokeLinecap="round" strokeDasharray="8 12"/>
+                    </svg>
+                </div>
+                <div className={'process_images_block_second'}>
                     <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="50" cy="50" r="50" fill="white"/>
                         <path d="M61.9374 69.9218C61.3337 69.9218 60.8437 70.4118 60.8437 71.0155C60.8437 71.6192 61.3337 72.1092 61.9374 72.1092C62.5412 72.1092 63.0312 71.6192 63.0312 71.0155C63.0312 70.4118 62.5412 69.9218 61.9374 69.9218Z" fill="#0EB757"/>
@@ -33,7 +38,13 @@ function Process(props){
                     <h4>Заявка</h4>
                     <p>Оформите заявку</p>
                 </div>
-                <div className={'process_images_block'}>
+                <div className={'ololo2'}>
+                    <svg width="126" height="40" viewBox="0 0 126 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M123.005 14.4684C93.1944 4.56571 53.8241 -2.32668 4.75684 37.4258" stroke="#BDBDBD" strokeWidth="1.5" strokeLinecap="round" strokeDasharray="8 12"/>
+                    </svg>
+
+                </div>
+                <div className={'process_images_block_first'}>
                     <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="50" cy="50" r="50" fill="white"/>
                         <path d="M56.9062 43.7812C56.3025 43.7812 55.8125 44.2713 55.8125 44.875C55.8125 45.4787 56.3025 45.9688 56.9062 45.9688C57.51 45.9688 58 45.4787 58 44.875C58 44.2713 57.51 43.7812 56.9062 43.7812Z" fill="#0EB757"/>
@@ -44,7 +55,12 @@ function Process(props){
                     <h4>Обработка</h4>
                     <p>Дождитесь обработки заявки</p>
                 </div>
-                <div className={'process_images_block'}>
+                <div className={'ololo1'}>
+                    <svg width="126" height="39" viewBox="0 0 126 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M122.779 24.9859C92.965 34.9239 53.5916 41.8462 4.53418 2" stroke="#BDBDBD" strokeWidth="1.5" strokeLinecap="round" strokeDasharray="8 12"/>
+                    </svg>
+                </div>
+                <div className={'process_images_block_second'}>
                     <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="50" cy="50" r="50" fill="white"/>
                         <g clipPath="url(#clip0)">

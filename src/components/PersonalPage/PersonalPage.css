@@ -9,11 +9,13 @@
 
 }
 .personal_header{
+    margin-top: 60px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
 .personal_header h3 {
+    text-transform: uppercase;
     font-family: var(--CIRCE-fontsize);
     font-style: normal;
     font-weight: bold;

@@ -19,9 +19,14 @@ class App extends Component {
             card: {},
         }
     }
+    clearOrderList(){
+        store.dispatch({type: 'CLEAR_ORDER_LIST'})
+    }
     orderRequest = (obj) =>{
         store.dispatch({type: 'ORDER_REQUEST', payload: obj});
+        store.dispatch({type: 'CLEAR_FILTER_TO_DEFAULT'});
         this.changeHistory('/');
+        window.scrollTo(0, 0)
     };
     selectCard = (name, elem) =>{
         this.setState({
@@ -29,7 +34,9 @@ class App extends Component {
         })
     };
     changeHistory = (value) =>{
+        store.dispatch({type: 'CLEAR_FILTER_TO_DEFAULT'});
         history.push(value);
+        window.scrollTo(0, 0)
     };
     render() {
         return (
@@ -37,7 +44,7 @@ class App extends Component {
                 <section className={'app_wrapper'}>
                     <div className={'app'}>
                         <Router history={history}>
-                            <Header changeHistory={this.changeHistory}/>
+                            <Header changeHistory={this.changeHistory} />
                             <Switch>
                                 <Route path={"/"} exact component={() => <Content selectCard={this.selectCard}
                                                                                   changeHistory={this.changeHistory}
@@ -51,7 +58,7 @@ class App extends Component {
                                 />}/>
                                 <Route path={"/account"} exact component={() => <PersonalPage changeHistory={this.changeHistory} />}/>
                             </Switch>
-                            <Footer/>
+                            <Footer clearOrderList={this.clearOrderList}/>
                         </Router>
                     </div>
                 </section>

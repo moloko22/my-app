@@ -15,15 +15,6 @@
     justify-content: space-around;
     flex-wrap: wrap;
 }
-.category span {
-    margin: 10px 0 0 60px;
-    font-family: var(--CIRCE-fontsize);
-    font-style: normal;
-    font-weight: bold;
-    font-size: 25px;
-    line-height: 24px;
-    color: #E0E0E0;
-}
 .category {
     flex: 1;
     width: 425px;
@@ -35,17 +26,18 @@
 }
 
 .category h2 {
+    text-transform: uppercase;
     margin: 20px 0 0 15px;
     font-family: var(--CIRCE-fontsize);
     font-style: normal;
-    font-weight: normal;
+    font-weight: bold;
     font-size: 28px;
     line-height: 31px;
     color: #333333;
 }
 
 .category li {
-    margin: 25px 15px;
+    margin: 15px 15px;
     font-family: var(--CIRCE-fontsize);
     font-style: normal;
     font-weight: normal;

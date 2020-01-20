@@ -9,7 +9,14 @@
 .filter_by_citys, .filter_type_of_equipment {
     margin: 0 10px;
 }
-.filter_by_citys select, .filter_type_of_equipment select{
+.filter_by_citys select, .filter_type_of_equipment select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
     background: none;
     border: none;
+}
+.filter_by_citys svg, .filter_type_of_equipment svg{
+    position: relative;
+    top: 4px;
 }

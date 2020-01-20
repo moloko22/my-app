@@ -5,6 +5,7 @@
     align-items: center;
 }
 .unique_info h3 {
+    text-transform: uppercase;
     font-family: var(--CIRCE-fontsize);
     font-style: normal;
     font-weight: bold;

@@ -72,6 +72,7 @@ class Content extends Component {
                                    selectCard={this.props.selectCard}/>
                     <Process process={process} />
                     <HowStart start={start}
+                              changeHistory={this.props.changeHistory}
                               sendRequest={this.search}
                     />
                 </section>

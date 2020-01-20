@@ -1,5 +1,19 @@
+@font-face {
+font-family: "Circe";
+src: url("../src/fonts/Circe-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Circe";
+  src: url("../src/fonts/Circe-Bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: bold;
+}
+
 :root {
-  --CIRCE-fontsize: 'Open Sans', sans-serif;
+  --CIRCE-fontsize: Circe,
 }
 .app_wrapper{
   background: #FBFBFD;
@@ -9,7 +23,8 @@
 .app {
   display: flex;
   flex-direction: column;
-  width: 1400px;
+  align-items: center;
+  width: 100%;
 }
 .header_background_image img{
   width: 900px;
