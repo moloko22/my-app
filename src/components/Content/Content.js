@@ -52,7 +52,7 @@ class Content extends Component {
 
                     </div>
                     <SearchHeader header={'Технологические сервисы'}
-                                  paragraph={'Совместная площадка Сбербанка и Сколково'}
+                                  paragraph={'Не нужно покупать дорогостоящее оборудование и брать в штат уникальных специалистов'}
                     />
                     <Search inputValue={this.props.inputValue}
                             onChangeInputValue={this.onChangeInputValue}

@@ -97,13 +97,6 @@ class Card extends Component {
     }
     onChange(name, value) {
         const orderDate = new Date();
-        if(!name && !value ){
-            this.props.card.dateFrom = this.changeDateFormat([orderDate.getDay(), orderDate.getMonth(), orderDate.getDate(), orderDate.getFullYear()]);
-            this.props.card.dateTo = this.changeDateFormat([orderDate.getDay(), orderDate.getMonth(), orderDate.getDate(), orderDate.getFullYear()]);
-            this.props.card.quantity = 1;
-            this.props.card.dateOrder = this.changeDateFormat([orderDate.getDay(), orderDate.getMonth(), orderDate.getDate(), orderDate.getFullYear()]);
-        }
-        if(!name || !value) return;
         if(name === 'dateFrom' || name === 'dateTo'){
             this.props.card[name] = this.changeDateFormat(value._d.toString().split(' ', 4));
             this.props.card.dateOrder = this.changeDateFormat([orderDate.getDay(), orderDate.getMonth(), orderDate.getDate(), orderDate.getFullYear()]);
@@ -115,6 +108,14 @@ class Card extends Component {
         if(name === 'comment'){
             this.props.card.comment = value;
         }
+        if(!this.props.card.dateFrom && !this.props.card.dateTo){
+            this.props.card.dateFrom = this.changeDateFormat([orderDate.getDay(), orderDate.getMonth(), orderDate.getDate(), orderDate.getFullYear()]);
+            this.props.card.dateTo = this.changeDateFormat([orderDate.getDay(), orderDate.getMonth(), orderDate.getDate(), orderDate.getFullYear()]);
+            this.props.card.quantity = 1;
+            this.props.card.dateOrder = this.changeDateFormat([orderDate.getDay(), orderDate.getMonth(), orderDate.getDate(), orderDate.getFullYear()]);
+        }
+        if(!name || !value) return;
+
     }
     render() {
         return (

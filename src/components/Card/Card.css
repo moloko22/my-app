@@ -92,6 +92,7 @@
     opacity: 0.5;
 }
 .one_card_form{
+    margin-left: 100px;
     min-height: 420px;
     padding: 25px;
     border: 1px solid #E0E0E0;
